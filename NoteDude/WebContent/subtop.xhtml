@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Add Subject\Topic</title>
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</h:head>
+<h:body style="background-image: url('/NoteDude/images/website-backgrounds.jpg');">
+<div class="container">
+  <div class="jumbotron">
+  <h1>Add Subject Topic</h1>
+  <BR />
+  <nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+		<div class="navbar-header">
+	    </div>
+	    <ul class="nav navbar-nav">
+	    	<li><a href="Index.xhtml">Home</a></li>
+	    	<li ><a href="Notes.xhtml">Notes</a></li>
+	    	<li ><a href="updateNotes.xhtml">Update Notes</a></li>
+	    	<li ><a href="deleteNotes.xhtml">Delete Notes</a></li>
+	    </ul>
+  		</div>
+	</nav>
+  
+	<h:form>
+		<h:messages styleClass="errorMessage" globalOnly="true" />
+		<h:message for="subID" styleClass="errorMessage" />
+		<br />
+      	Subject ID <h:inputText class="form-control form-control-lg" value="#{subTopics.subID}" id="subID" p:placeholder="" required="true" requiredMessage="subject id is needed, please try again" />
+		<br />
+		<h:message for="topID" styleClass="errorMessage" />
+		<br />
+      	Topic ID <h:inputText class="form-control form-control-lg" value="#{subTopics.topID}" id="topID" p:placeholder="" required="true" requiredMessage="Topic ID is needed" />
+		<br />
+		<h:commandButton value="Add" action="#{subTopicController.addSubTopics(subTopics)}" />
+		<br />
+		<br />
+	</h:form>
+	</div>
+	</div>
+</h:body>
+</html>
